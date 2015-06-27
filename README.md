@@ -13,17 +13,26 @@ containing dynamic playlist url.
 For example, saving playlist url into output.mp4.
 
 ```
-python hlsdump.py -o output.mp4 http://xxx.com/playlist.m3u8
+python hlsdump.py \
+  -o output.mp4 \
+  http://xxx.com/playlist.m3u8
 ```
 
 Streaming playlist url to stdout and playing by mplayer.
 
 ```
-python hlsdump.py -o - http://xxx.com/playlist.m3u8 | mplayer -
+python hlsdump.py \
+  -o - \
+  http://xxx.com/playlist.m3u8 \
+| mplayer -
 ```
 
 Saving playlist url embedded in iframe inside another html.
 
 ```
-python hlsdump.py --regexp 'src="(http://xxx.com/[^"]+)"' --regexp 'file: "([^"]+)"' -o output.mp4 http://xxx.com/page.html
+python hlsdump.py \
+  --regexp 'src="(http://xxx.com/[^"]+)"' \
+  --regexp 'file: "([^"]+)"' \
+  -o output.mp4 \
+  http://xxx.com/page.html
 ```
